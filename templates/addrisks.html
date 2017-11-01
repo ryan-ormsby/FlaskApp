@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Hi, {{ user.nickname }}!</h1>
+    <div><p>What order do you want to add risk to?</p></div>
+    <form action="" method="post" name="addrisks">
+      {{ form.hidden_tag() }}
+      <p>
+          Please enter your Order Number:<br>
+          {{ form.orderid(size=80) }}<br>
+          {% for error in form.orderid.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+      </p>
+      <p><input type="submit" value="Add Risk"></p>
+  </form>
+{% endblock %}

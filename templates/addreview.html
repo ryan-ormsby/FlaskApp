@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Hi, {{ user.nickname }}!</h1>
+    <div><p>Please leave a review</p></div>
+    <form action="" method="post" name="addreview">
+      {{ form.hidden_tag() }}
+      <p>
+          Please enter your Name:<br>
+          {{ form.nickname(size=80) }}<br>
+          {% for error in form.nickname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+          Please enter your Review:<br>
+          {{ form.review(size=80) }}<br>
+          {% for error in form.review.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+      </p>
+      <p><input type="submit" value="Add Review"></p>
+  </form>
+{% endblock %}
