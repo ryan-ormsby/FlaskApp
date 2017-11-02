@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
+<div class="Polaris-Page">
+<div class="Polaris-Page__Title">
+  <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeMedium">Add Risk</h1>
+</div>
     <div><p>What order do you want to add risk to?</p></div>
     <form action="" method="post" name="addrisks">
       {{ form.hidden_tag() }}
@@ -13,4 +16,5 @@
       </p>
       <p><input type="submit" value="Add Risk"></p>
   </form>
+</div>
 {% endblock %}

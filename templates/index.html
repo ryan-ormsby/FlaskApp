@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
+<div class="Polaris-Page">
+  <div class="Polaris-Page__Title">
+    <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeMedium">Home</h1>
+  </div>
     <p>Recent Reviews:</p>
     {% for post in posts %}
     <div><p>{{ post.author.nickname }} says: <b>{{ post.body.review }}</b></p></div>
     {% endfor %}
+</div>
 {% endblock %}

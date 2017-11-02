@@ -1,25 +1,36 @@
 <html>
   <head>
-    {% if title %}
-    <title>{{ title }} - RyanApp</title>
-    {% else %}
-    <title>Welcome to RyanApp</title>
-    {% endif %}
+    <link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/latest/polaris.css" />
+      {% if title %}
+      <title>{{ title }} - RyanApp</title>
+      {% else %}
+      <title>Welcome to RyanApp</title>
+      {% endif %}
   </head>
   <body>
-    <div>RyanApp: <a href="/index">Home</a></div>
-    <div>RyanApp: <a href="/addrisks">Add Risk</a></div>
-    <div>RyanApp: <a href="/addreview">Add Review</a></div>
-    <hr>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages %}
-            <li>{{ message }} </li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-    {% block content %}{% endblock %}
+
+    <div class="Polaris-Page">
+      <div class="Polaris-Page__Header">
+        <div class="Polaris-Page__Title">
+          <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Welcome to RyanAPP now w/ Polaris!</h1>
+        </div>
+          <div class="Polaris-Page__Navigation">
+            <div><a href="/index">Home</a> | <a href="/addrisks">Add Risk</a> | <a href="/addreview">Add Review</a></div>
+          </div>
+          <hr>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              <ul>
+                {% for message in messages %}
+                  <li>{{ message }} </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            {% endwith %}
+          {% block content %}{% endblock %}
+
+      </div>
+    </div>
+
   </body>
 </html>
