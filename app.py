@@ -1,5 +1,6 @@
 from flask import Flask, render_template, flash, redirect
 from forms import AddRiskForm, AddReviewForm
+from config import *
 import addrisk
 import sqlite3
 
