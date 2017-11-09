@@ -1,8 +1,9 @@
-from flask import Flask, render_template, flash, redirect
+from flask import Flask, render_template, flash, redirect, request
 from forms import AddRiskForm, AddReviewForm
 from config import *
 import addrisk
 import sqlite3
+import json
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -67,3 +68,14 @@ def addreview():
                             title='Add Review',
                             user=user,
                             form=form)
+
+@app.route('/webhook',methods=['POST'])
+def webhook():
+
+   json_body = json.loads(request.data)
+   ordertoaddrisk = json_body["id"]
+   addrisk.editorder(ordertoaddrisk)
+
+   print "Adding risk to %s" % (ordertoaddrisk)
+
+   return "OK"
