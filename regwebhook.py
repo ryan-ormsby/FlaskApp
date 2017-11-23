@@ -13,3 +13,16 @@ def regwebhook():
     addwh.format = "json"
     addwh.save()
     print addwh.id
+
+
+#def create_order_webhook
+      # create webhook for order creation if it doesn't exist
+#      unless ShopifyAPI::Webhook.find(:all).any?
+#        webhook = {
+#          topic: 'orders/create',
+#          address: "https://#{APP_URL}/giftbasket/webhook/order_create",
+#          format: 'json'}
+#
+#        ShopifyAPI::Webhook.create(webhook)
+#      end
+#    end

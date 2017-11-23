@@ -29,3 +29,17 @@ def shopify_webhook(f):
     return f(request, args, kwargs)
 
   return wrapper
+
+
+import shopify
+
+shopify.Session.setup(api_key=api_key, secret=api_secret)
+
+session = shopify.Session(
+    myshopify_domain,
+    access_token,
+)
+
+shopify.ShopifyResource.activate_session(session)
+for webhook in shopify.Webhook.find():
+    print webhook.to_dict()
