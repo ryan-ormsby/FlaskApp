@@ -1,0 +1,7 @@
+{
+    "carrier_service": {
+    "name": "Ryan Shipping",
+    "callback_url": "https:\/\/shopifyapps.fwd.wf/carrier",
+    "service_discovery": true
+    }
+}
