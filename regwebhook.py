@@ -1,28 +1,17 @@
 #register webhook
-import shopify, app, json
+import shopify, app, json, requests
+import urllib3
+urllib3.disable_warnings()
 from config import * #get config variables
 
 shop_url = "https://%s:%s@%s.myshopify.com/admin" % (API_KEY, PASSWORD, SHOP_NAME) #from config.py
-shopify.ShopifyResource.set_site(shop_url)
-shop = shopify.Shop.current()
+whurl = shop_url + "/webhooks.json"
 
-def regwebhook():
-    addwh = shopify.Webhook()
-    addwh.topic = "orders/create"
-    addwh.address = "https://shopifyapps.fwd.wf/webhook"
-    addwh.format = "json"
-    addwh.save()
-    print addwh.id
+with open('webhook.json') as json_data:
+    d = json.load(json_data)
 
+print(whurl)
+print(d)
 
-#def create_order_webhook
-      # create webhook for order creation if it doesn't exist
-#      unless ShopifyAPI::Webhook.find(:all).any?
-#        webhook = {
-#          topic: 'orders/create',
-#          address: "https://#{APP_URL}/giftbasket/webhook/order_create",
-#          format: 'json'}
-#
-#        ShopifyAPI::Webhook.create(webhook)
-#      end
-#    end
+regwh = requests.post(whurl, json=d)
+print(regwh.status_code)

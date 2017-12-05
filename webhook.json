@@ -1,0 +1,7 @@
+{
+    "webhook": {
+    "topic": "orders\/create",
+    "address": "https:\/\/shopifyapps.fwd.wf/webhook",
+    "format": "json"
+    }
+}
