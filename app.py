@@ -79,3 +79,22 @@ def webhook():
    print "Adding risk to %s" % (ordertoaddrisk)
 
    return "OK"
+
+
+@app.route('/carrier',methods=['GET', 'POST'])
+def carrier():
+    with open('rates.json') as json_data:
+        d = json.load(json_data)
+
+    response = app.response_class(
+        response=json.dumps(d),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+#@app.route('/regcarrier',methods=['GET', 'POST'])
+#def regcarrier():
+
+#@app.route('/regwebhook',methods=['GET', 'POST'])
+#def regcarrier():

@@ -1,0 +1,18 @@
+{
+      "rates": [
+               {
+                   "service_name": "1 Day",
+                   "service_code": "ON",
+                   "total_price": "1234",
+                   "description": "This is the fastest option by far",
+                   "currency": "CAD"
+               },
+               {
+                   "service_name": "2 Day",
+                   "service_code": "2D",
+                   "total_price": "1122",
+                   "description": "This is the second fastest option by far",
+                   "currency": "CAD"
+               }
+           ]
+}
