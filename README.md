@@ -1,5 +1,5 @@
 # FlaskApp
-Learning sample Python app using Flask and the ShopifyAPI
+Learning sample Private Python app using Flask and the ShopifyAPI
 
 Run app with `FLASK_APP=app.py flask run`
 
@@ -20,6 +20,3 @@ and if you want to use secure forms with WTF:
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'your-key-here'
 ```
-
-
-These will changes once OAUTH2 is implemented.

@@ -15,4 +15,3 @@ def editorder(ordertoaddrisk):
     addrisk.display = True
     addrisk.cause_cancel = True
     addrisk.save()
-    print addrisk.errors.full_messages()

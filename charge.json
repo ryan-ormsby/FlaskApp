@@ -1,0 +1,10 @@
+{
+  "recurring_application_charge": {
+    "name": "Ryan Test Plan",
+    "price": 10.0,
+    "return_url": "http:\/\/shopifyapps.fwd.wf",
+    "capped_amount": 100,
+    "terms": "$1 for 1000 order risk",
+    "test": "true"
+  }
+}

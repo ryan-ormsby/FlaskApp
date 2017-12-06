@@ -1,6 +1,7 @@
 from flask import Flask, render_template, flash, redirect, request
 from forms import AddRiskForm, AddReviewForm
 from config import *
+from register import addcharge
 import addrisk
 import sqlite3
 import json
@@ -92,6 +93,15 @@ def carrier():
         mimetype='application/json'
     )
     return response
+
+#will not work on private key, needs to be public
+#@app.route('/register',methods=['GET', 'POST'])
+#def register():
+#
+#    addcharge()
+#
+#    return redirect(conurl)
+
 
 #@app.route('/regcarrier',methods=['GET', 'POST'])
 #def regcarrier():
