@@ -94,7 +94,8 @@ def carrier():
     )
     return response
 
-#will not work on private key, needs to be public
+
+#will not work on private app, needs to be public
 #@app.route('/register',methods=['GET', 'POST'])
 #def register():
 #
@@ -107,4 +108,7 @@ def carrier():
 #def regcarrier():
 
 #@app.route('/regwebhook',methods=['GET', 'POST'])
+#def regcarrier():
+
+#@app.route('/regcharge',methods=['GET', 'POST'])
 #def regcarrier():
