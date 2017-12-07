@@ -6,7 +6,7 @@ shop_url = "https://%s:%s@%s.myshopify.com/admin" % (API_KEY, PASSWORD, SHOP_NAM
 shopify.ShopifyResource.set_site(shop_url)
 shop = shopify.Shop.current()
 
-def fulfillorder(ordertoaddrisk):
+def fulfillorder(orderid):
 
     #addrisk = shopify.OrderRisk({'order_id': ordertoaddrisk})
     #addrisk.message = "This order was placed from a proxy IP"

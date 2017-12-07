@@ -42,8 +42,8 @@ def addrisks():
 
         flash('Added Risk to OrderID="%s"' % (form.orderid.data))
 
-        ordertoaddrisk = form.orderid.data
-        addrisk.editorder(ordertoaddrisk)
+        orderid = form.orderid.data
+        addrisk.editorder(orderid)
 
         return redirect('/index')
     return render_template('addrisks.html',
@@ -74,10 +74,11 @@ def addreview():
 def webhook():
 
    json_body = json.loads(request.data)
-   ordertoaddrisk = json_body["id"]
-   addrisk.editorder(ordertoaddrisk)
+   orderid = json_body["id"]
+   addrisk.editorder(orderid)
 
-   print "Adding risk to %s" % (ordertoaddrisk)
+   print "Adding risk to %s" % (orderid)
+   print "Fulfilling order %s" % (orderid)
 
    return "OK"
 

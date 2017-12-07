@@ -6,8 +6,8 @@ shop_url = "https://%s:%s@%s.myshopify.com/admin" % (API_KEY, PASSWORD, SHOP_NAM
 shopify.ShopifyResource.set_site(shop_url)
 shop = shopify.Shop.current()
 
-def editorder(ordertoaddrisk):
-    addrisk = shopify.OrderRisk({'order_id': ordertoaddrisk})
+def editorder(orderid):
+    addrisk = shopify.OrderRisk({'order_id': orderid})
     addrisk.message = "This order was placed from a proxy IP"
     addrisk.recommendation = "cancel"
     addrisk.score = "1.0"
